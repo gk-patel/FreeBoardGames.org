@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { grey, red, blue, lightGreen } from '@material-ui/core/colors';
+import { grey, red, blue, green } from '@material-ui/core/colors';
 
 import ShjImg from './media/ShjSqr.png';
 import GopImg from './media/GopSqr.png';
@@ -34,7 +34,7 @@ export const CircleRed = (props: IShapeProps) => {
       cx={props.x + 0.5}
       cy={props.y + 0.5}
       r={diskRadius}
-      fill={lightGreen['A400']}
+      fill={green['A200']}
       strokeWidth={strokeWidth}
       stroke={grey[50]}
     />
