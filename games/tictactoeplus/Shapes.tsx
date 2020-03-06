@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ShjImg from './media/ShjSqr.png'
 
 interface IShapeProps {
   x: number;
@@ -42,7 +43,7 @@ export const WildCardChar = (props: IShapeProps) => {
   return (
     <svg x={props.x} y={props.y} width="1" height="1" display="block">
       <image 
-        href="https://dl.dropbox.com/s/28ezxbzpwlg12d3/theamImage.png?raw=1" 
+        href={ShjImg}
         height="100%"/> 
     </svg>
   );
