@@ -17,6 +17,9 @@ import green from '@material-ui/core/colors/lightGreen';
 import blue from '@material-ui/core/colors/blue';
 import grey from '@material-ui/core/colors/grey';
 
+import ShjImg from './media/ShjSqr.png';
+import GopImg from './media/GopSqr.png'
+
 import Typography from '@material-ui/core/Typography';
 import { isAIGame } from '../common/gameMode';
 
@@ -57,11 +60,13 @@ export class Board extends React.Component<IBoardProps, {}> {
     if (scoreboard[0].score === scoreboard[scoreboard.length - 1].score) {
       return 'draw';
     } else {
-      if (scoreboard[0].score === scoreboard.find(rank => rank.playerID === this.props.playerID).score) {
-        return 'you won';
-      } else {
-        return 'you lost';
-      }
+      try {
+        if (scoreboard[0].score === scoreboard.find(rank => rank.playerID === this.props.playerID).score) {
+          return 'you won';
+        } else {
+          return 'you lost';
+        }
+      } catch(err) { return 'See the Scorecard'; }
     }
   }
 
@@ -123,6 +128,11 @@ export class Board extends React.Component<IBoardProps, {}> {
         : [red[500], green[500], yellow[500], blue[500]];
     const colorMap = this.getColorMap();
 
+    const murti = 
+      this.props.ctx.numPlayers !== 2
+        ? [GopImg, GopImg, ShjImg, ShjImg]
+        : [GopImg, ShjImg, GopImg, ShjImg];
+
     return (
       <GameLayout gameArgs={this.props.gameArgs}>
         <Typography variant="h5" style={{ textAlign: 'center', color: 'white', marginBottom: '16px' }}>
@@ -145,7 +155,7 @@ export class Board extends React.Component<IBoardProps, {}> {
                 ></rect>
                 <svg x="0.1" y="0.1" width="1" height="1" display="block">
                   <image 
-                    href="https://dl.dropbox.com/s/28ezxbzpwlg12d3/theamImage.png?raw=1" 
+                    href={ murti[point.player as any] }
                     height="80%"/> 
                 </svg>
                 </g>
