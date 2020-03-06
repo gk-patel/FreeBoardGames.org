@@ -144,7 +144,7 @@ export class Board extends React.Component<IBoardProps, {}> {
             .filter(point => point.player !== null)
             .map(point => (
               <Token animate={false} key={point.position} x={point.position % 8} y={(point.position / 8) << 0}>
-                 <g>
+              <g>
                 <rect
                   width="0.8"
                   height="0.8"
@@ -153,12 +153,10 @@ export class Board extends React.Component<IBoardProps, {}> {
                   style={{ fill: colors[point.player as any] }}
                   className={css.Piece}
                 ></rect>
-                {/*<svg x="0.1" y="0.1" width="1" height="1" display="block"> */}
-                  <image 
-                    x="0.1" y="0.1" width="0.8" height="0.8"
-                    href={ murti[point.player as any] }
-                    /> 
-                {/* </svg> */}
+                <image 
+                  x="0.1" y="0.1" width="0.8" height="0.8"
+                  href={ murti[point.player as any] }
+                  /> 
                 </g>
               </Token>
             ))}

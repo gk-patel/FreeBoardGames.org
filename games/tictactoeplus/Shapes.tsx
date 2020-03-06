@@ -41,11 +41,10 @@ export const Cross = (props: IShapeProps) => {
 
 export const WildCardChar = (props: IShapeProps) => {
   return (
-    <svg x={props.x} y={props.y} width="1" height="1" display="block">
-      <image 
-        href={ShjImg}
-        height="100%"/> 
-    </svg>
+    <image 
+      x={props.x + 0.05} y={props.y + 0.05} width="0.9" height="0.9"
+      href={ShjImg}
+      /> 
   );
 };
 

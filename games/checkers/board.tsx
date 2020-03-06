@@ -157,11 +157,10 @@ export class Board extends React.Component<IBoardProps, IBoardState> {
           >
             <g>
               <circle r="0.4" fill={piece.data.isKing ? blue[300] : grey[50]} cx="0.5" cy="0.5" />
-              <svg x="0.1" y="0.1" width="1" height="1" display="block">
               <image 
-                  href={ piece.data.playerID === '0' ? ShjImg : GopImg }
-                  height="80%"/> 
-              </svg>
+                x="0.11" y="0.11" width="0.78" height="0.78"
+                href={ piece.data.playerID === '0' ? ShjImg : GopImg }
+                /> 
             </g>
           </Token>
         );

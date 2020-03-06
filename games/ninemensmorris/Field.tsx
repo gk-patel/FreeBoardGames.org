@@ -73,19 +73,20 @@ export class Field extends React.Component<IFieldProps, {}> {
       const scale = i === this.props.selected ? 1.2 : 1;
       return (
         <g key={'grp' + point.piece.key}>
-        <circle
-          r={PIECE_RADIUS}
-          key={point.piece.key}
-          fill={point.piece.player === '0' ? 'white' : red[500]}
-          onClick={this._selectPoint(i)}
-          className={`${css.Piece} Piece`}
-          style={{ transform: `translate(${coords[i].cx}px, ${coords[i].cy}px) scale(${scale})` }}
-        />
-        <svg x={(coords[i].cx - PIECE_RADIUS + 2) + 'px'} y={(coords[i].cy - PIECE_RADIUS + 2) + 'px'} width={2*PIECE_RADIUS} height={2*PIECE_RADIUS}>
+          <circle
+            r={PIECE_RADIUS*1.1}
+            key={point.piece.key}
+            fill={point.piece.player === '0' ? 'white' : red[500]}
+            onClick={this._selectPoint(i)}
+            className={`${css.Piece} Piece`}
+            style={{ transform: `translate(${coords[i].cx}px, ${coords[i].cy}px) scale(${scale})` }}
+          />
           <image 
+            x={(coords[i].cx - PIECE_RADIUS) + 'px'} 
+            y={(coords[i].cy - PIECE_RADIUS) + 'px'}
+            width={1.8*PIECE_RADIUS} height={1.8*PIECE_RADIUS}
             href={ point.piece.player === '0' ? ShjImg : GopImg }
-            height="85%"/> 
-        </svg>
+            /> 
         </g>
       );
     });
