@@ -21,7 +21,7 @@ import green from '@material-ui/core/colors/lightGreen';
 import { isOnlineGame, isLocalGame, isAIGame } from '../common/gameMode';
 
 import ShjImg from './media/ShjSqr.png';
-import GopImg from './media/GopSqr.png'
+import GopImg from './media/GopSqr.png';
 
 interface IBoardProps {
   G: IG;

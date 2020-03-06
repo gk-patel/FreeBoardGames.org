@@ -18,7 +18,7 @@ import blue from '@material-ui/core/colors/blue';
 import grey from '@material-ui/core/colors/grey';
 
 import ShjImg from './media/ShjSqr.png';
-import GopImg from './media/GopSqr.png'
+import GopImg from './media/GopSqr.png';
 
 import Typography from '@material-ui/core/Typography';
 import { isAIGame } from '../common/gameMode';
